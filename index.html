@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roman Pruglo — Customer Success Manager</title>
+  <meta name="description" content="Customer Success Manager with 7+ years in Fintech and Crypto. B2B retention, churn reduction, revenue growth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0E1117;
+      --bg-card: rgba(255,255,255,0.03);
+      --bg-metrics: rgba(45,125,210,0.03);
+      --border: rgba(255,255,255,0.08);
+      --border-soft: rgba(255,255,255,0.06);
+      --accent: #2D7DD2;
+      --accent-hover: #2468B5;
+      --accent-dim: rgba(45,125,210,0.3);
+      --accent-bg: rgba(45,125,210,0.08);
+      --accent-border: rgba(45,125,210,0.25);
+      --text-primary: #F2F4F8;
+      --text-body: #E8EAF0;
+      --text-muted: #8A8FA8;
+      --text-dim: #6B7394;
+      --text-darker: #4A5170;
+      --text-faint: #3A4060;
+      --text-highlight: #C5D8F5;
+      --radius: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      border-bottom: 0.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(14,17,23,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .nav-logo { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.03em; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 11px; color: var(--text-muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    section { padding: 64px 48px; border-bottom: 0.5px solid var(--border-soft); }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--accent-dim); }
+
+    #hero { padding-top: 80px; padding-bottom: 72px; }
+    .hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero-name { font-size: 52px; font-weight: 600; line-height: 1.05; letter-spacing: -0.025em; color: var(--text-primary); margin-bottom: 14px; }
+    .hero-title { font-size: 17px; color: var(--text-muted); font-weight: 300; margin-bottom: 28px; }
+    .hero-title span { color: var(--accent); font-weight: 400; }
+    .hero-summary { max-width: 600px; font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 36px; }
+    .contacts { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-muted); background: var(--bg-card); border: 0.5px solid var(--border); border-radius: 6px; padding: 7px 14px; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .chip i { font-size: 15px; }
+
+    #metrics { background: var(--bg-metrics); padding-top: 48px; padding-bottom: 48px; }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
+    .metric-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 20px 18px; transition: border-color 0.2s; }
+    .metric-card:hover { border-color: rgba(45,125,210,0.5); }
+    .metric-value { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 600; color: var(--accent); line-height: 1.1; margin-bottom: 8px; }
+    .metric-label { font-size: 11px; color: var(--text-dim); line-height: 1.45; }
+
+    .job { margin-bottom: 52px; }
+    .job:last-child { margin-bottom: 0; }
+    .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+    .job-title { font-size: 15px; font-weight: 500; color: var(--text-primary); }
+    .job-period { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-darker); }
+    .job-company { font-size: 13px; color: var(--accent); margin-bottom: 18px; }
+    .job-bullets { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .job-bullets li { font-size: 13px; color: var(--text-muted); padding-left: 18px; position: relative; line-height: 1.7; }
+    .job-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--text-darker); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    .hl { color: var(--text-highlight); }
+
+    /* Nested sub-bullets for Tableau detail */
+    .sub-bullets { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 6px; padding-left: 16px; }
+    .sub-bullets li { font-size: 12px; color: var(--text-dim); padding-left: 14px; position: relative; line-height: 1.6; }
+    .sub-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--text-darker); font-family: 'JetBrains Mono', monospace; }
+
+    .tools-line { margin-top: 16px; font-size: 11px; color: var(--text-darker); font-family: 'JetBrains Mono', monospace; }
+    .tools-line span { color: var(--text-dim); }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    .skill-group-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-darker); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag { font-size: 11px; color: var(--text-muted); background: var(--bg-card); border: 0.5px solid rgba(255,255,255,0.09); border-radius: 4px; padding: 4px 10px; }
+    .tag.accent { color: var(--accent); background: var(--accent-bg); border-color: var(--accent-border); }
+
+    .edu-item { margin-bottom: 24px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree { font-size: 14px; color: var(--text-highlight); margin-bottom: 4px; }
+    .edu-school { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-darker); }
+
+    #contact { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-top: 56px; padding-bottom: 56px; }
+    .cta-text { font-size: 22px; font-weight: 500; color: var(--text-primary); line-height: 1.3; }
+    .cta-text span { color: var(--accent); }
+    .cta-btn { display: inline-flex; align-items: center; gap: 9px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius); padding: 14px 28px; font-size: 13px; font-family: 'Inter', sans-serif; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .cta-btn:hover { background: var(--accent-hover); }
+    .cta-btn i { font-size: 16px; }
+
+    footer { padding: 24px 48px; border-top: 0.5px solid var(--border-soft); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-faint); }
+    .footer-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-darker); background: rgba(45,125,210,0.06); border: 0.5px solid rgba(45,125,210,0.15); border-radius: 4px; padding: 4px 10px; }
+
+    @media (max-width: 768px) {
+      nav, section, footer, #contact { padding-left: 24px; padding-right: 24px; }
+      .hero-name { font-size: 36px; }
+      #hero { padding-top: 56px; padding-bottom: 56px; }
+      .nav-links { gap: 16px; }
+    }
+    @media (max-width: 480px) {
+      .hero-name { font-size: 28px; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      nav { padding: 16px 20px; }
+      section, #contact, footer { padding-left: 20px; padding-right: 20px; }
+      .nav-links { display: none; }
+    }
+
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo mono" href="#">roman_pruglo.portfolio</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Stack</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-eyebrow">Open to relocation · Klaipeda, Lithuania</div>
+    <h1 class="hero-name">Roman Pruglo</h1>
+    <p class="hero-title">Customer Success Manager · <span>Fintech &amp; Crypto</span> · 7+ years</p>
+    <p class="hero-summary">
+      7+ years in financial services, fintech, and crypto. Specialising in B2B client retention, churn reduction, and revenue growth. Proven track record managing portfolios of 300–500 clients, running data-driven HADI experiments, and driving upsell outcomes across high-growth environments. English C1 Advanced.
+    </p>
+    <div class="contacts">
+      <a class="chip" href="mailto:kennykennya00@gmail.com"><i class="ti ti-mail"></i>kennykennya00@gmail.com</a>
+      <a class="chip" href="tel:+37062605244"><i class="ti ti-phone"></i>+370 626 05244</a>
+      <a class="chip" href="https://linkedin.com/in/roman-pruglo" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i>linkedin/roman-pruglo</a>
+      <span class="chip"><i class="ti ti-map-pin"></i>Lithuania · EU</span>
+    </div>
+  </section>
+
+  <!-- Metrics -->
+  <section id="metrics">
+    <div class="section-label">key impact metrics</div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value mono">10–15%</div>
+        <div class="metric-label">Churn reduction per cycle</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value mono">300–500</div>
+        <div class="metric-label">B2B clients in portfolio</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value mono">20+</div>
+        <div class="metric-label">Clients onboarded / month</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value mono">$5K/mo</div>
+        <div class="metric-label">Upsell revenue generated</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value mono">1–2</div>
+        <div class="metric-label">HADI experiments / month</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-label">work experience</div>
+
+    <!-- Job 1 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Customer Success Manager</span>
+        <span class="job-period mono">Sep 2025 — Present</span>
+      </div>
+      <div class="job-company">Tochka Bank · IT / Banking / Fintech</div>
+      <ul class="job-bullets">
+        <li>Reduced churn by <span class="hl">10–15% per cycle</span> across a portfolio of <span class="hl">300–500 B2B clients</span> — serving as their primary point of contact for both strategic success and day-to-day product support.</li>
+        <li>Ran <span class="hl">1–2 HADI experiments per month</span>: formed hypothesis, aligned to business KPIs, segmented audience, ran A/B test, scaled results.</li>
+        <li>Used <span class="hl">Tableau daily</span> at every stage of the experiment cycle:
+          <ul class="sub-bullets">
+            <li><span class="hl">Before</span> — filtered clients by churn risk, usage activity, and cohort to spot patterns and shape the hypothesis.</li>
+            <li><span class="hl">During</span> — tracked live KPI deltas between test and control groups; caught signals early to adjust if needed.</li>
+            <li><span class="hl">After</span> — validated results, built stakeholder reports, and supported go / no-go decisions on scaling.</li>
+          </ul>
+        </li>
+        <li>Ran cohort analysis across <span class="hl">30 / 60 / 90-day windows</span> — found that months 2–3 post-onboarding carry the highest churn risk; built an early-intervention playbook around this insight.</li>
+        <li>Scored every initiative by impact, cost, and confidence — kept the team focused on actions with the strongest return.</li>
+        <li>Triaged and filtered every incoming request — categorised by urgency and type, routed to the relevant department (product, tech, finance, compliance), and tracked resolution end to end.</li>
+        <li>Validated solutions before returning them to the client — ensured the answer was complete, accurate, and solved the client's underlying goal, not just the surface request.</li>
+        <li>Spotted recurring issue patterns across the portfolio and escalated systemic problems to product and QMS — turning individual tickets into product improvements that reduced future support volume.</li>
+      </ul>
+      <div class="tools-line">Tools: <span>Tableau · Jira · Confluence · Miro · MS Dynamics CRM · Yonote</span></div>
+    </div>
+
+    <!-- Job 2 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Foreign Economic Activity (FEA) Manager</span>
+        <span class="job-period mono">Sep 2020 — Aug 2025</span>
+      </div>
+      <div class="job-company">Tochka Bank · IT / Banking / Fintech</div>
+      <ul class="job-bullets">
+        <li>Onboarded <span class="hl">20+ B2B clients per month</span> — guided each through a 6-step process from first meeting to active product use and feedback.</li>
+        <li>Generated <span class="hl">~$5,000/month in upsell revenue</span> by spotting additional needs during onboarding; converted 15 clients in a single month.</li>
+        <li>Negotiated and closed deals at <span class="hl">CEO / CFO level</span> — including franchise networks and holding companies.</li>
+        <li>Segmented client data via <span class="hl">SQL (Oracle / MySQL)</span> and automated reporting in Excel (Power Query) — cut manual reporting time significantly.</li>
+        <li>Benchmarked <span class="hl">5+ competitor products each quarter</span> and fed findings directly back to the product team.</li>
+      </ul>
+      <div class="tools-line">Tools: <span>SQL · HubSpot · MS Dynamics CRM · Jira · Confluence · Excel (Power Query)</span></div>
+    </div>
+
+    <!-- Job 3 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Client Relationship Manager</span>
+        <span class="job-period mono">Apr 2020 — Aug 2020</span>
+      </div>
+      <div class="job-company">InstaForex · Brokerage</div>
+      <ul class="job-bullets">
+        <li>Managed a portfolio of 30 active clients with touchpoints every 2 days — maintained consistent engagement to sustain trading volume and hit monthly targets.</li>
+        <li>Consulted clients on MT4 platform usage — order execution, instrument setup, account configuration — primarily in English.</li>
+        <li>Drove trading volume growth through proactive outreach; monitored each client's activity and stepped in early when volume dropped below plan.</li>
+        <li>Conducted risk assessments and processed all client documentation with 100% compliance to broker requirements.</li>
+      </ul>
+    </div>
+
+    <!-- Job 4 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Client Manager — Financial Services &amp; Brokerage</span>
+        <span class="job-period mono">Mar 2020 — Aug 2020</span>
+      </div>
+      <div class="job-company">ZERICH Bank · Banking / Investment</div>
+      <ul class="job-bullets">
+        <li>Built individual investment portfolios for retail and institutional clients — matched to risk profile and return goals.</li>
+        <li>Grew the client base via in-person and online presentations; monitored and rebalanced portfolios as markets moved.</li>
+      </ul>
+    </div>
+
+    <!-- Job 5 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Customer Support Specialist</span>
+        <span class="job-period mono">Aug 2019 — Feb 2020</span>
+      </div>
+      <div class="job-company">PrimeXBT · Crypto Derivatives Platform</div>
+      <ul class="job-bullets">
+        <li>Handled <span class="hl">30–40 support tickets per day</span> on a high-volume crypto derivatives platform — resolved within a <span class="hl">5–7 minute response KPI</span> in Russian and English.</li>
+        <li>Covered the full range of client issues: margin calls and liquidation explanations, deposit / withdrawal processing, bonus activation, and referral reward calculations.</li>
+        <li>Maintained high CSAT scores as part of a specialist support team — built deep product knowledge across trading mechanics, account management, and on-chain infrastructure.</li>
+        <li>Turned complex financial processes (leverage, margin ratios, crypto settlements) into clear, accessible explanations for clients at all experience levels.</li>
+      </ul>
+    </div>
+
+    <!-- Job 6 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Sales Consultant — Internship</span>
+        <span class="job-period mono">May 2018 — Sep 2018</span>
+      </div>
+      <div class="job-company">Sberbank · Retail Banking</div>
+      <ul class="job-bullets">
+        <li>Handled high-volume client flows across the full product suite — cards, deposits, loans, mortgage, and insurance.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-label">skills &amp; tools</div>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-group-title">CS &amp; Growth</div>
+        <div class="tags">
+          <span class="tag accent">Churn Rate</span>
+          <span class="tag accent">LTV</span>
+          <span class="tag accent">NPS</span>
+          <span class="tag accent">NRR</span>
+          <span class="tag">Cohort Analysis</span>
+          <span class="tag">A/B Testing</span>
+          <span class="tag">HADI Methodology</span>
+          <span class="tag">Upsell / Cross-sell</span>
+          <span class="tag">Client Onboarding</span>
+          <span class="tag">Retention Calls</span>
+          <span class="tag">Portfolio Management</span>
+          <span class="tag">FEA</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">Data &amp; Analytics</div>
+        <div class="tags">
+          <span class="tag accent">Tableau</span>
+          <span class="tag accent">SQL</span>
+          <span class="tag">Oracle</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Excel Power Query</span>
+          <span class="tag">Pivot Tables</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">CRM &amp; Tools</div>
+        <div class="tags">
+          <span class="tag">HubSpot</span>
+          <span class="tag">MS Dynamics CRM</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Confluence</span>
+          <span class="tag">Miro</span>
+          <span class="tag">Notion</span>
+          <span class="tag">Yonote</span>
+          <span class="tag">1C-Bitrix</span>
+          <span class="tag">Discord</span>
+          <span class="tag">PowerPoint</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">Languages</div>
+        <div class="tags">
+          <span class="tag accent">English — C1 Advanced</span>
+          <span class="tag">Russian — Native</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="section-label">education</div>
+    <div class="edu-item">
+      <div class="edu-degree">Forensic Economic Expertise / Economic Security</div>
+      <div class="edu-school mono">MFUA, Moscow · 2025</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Economics · Money, Banks &amp; Financial Markets</div>
+      <div class="edu-school mono">RANEPA, Moscow · 2022</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Economics and Accounting / Banking</div>
+      <div class="edu-school mono">RANEPA, Moscow (Distance) · 2019</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact">
+    <div class="cta-text">Ready to discuss<br><span>new opportunities</span></div>
+    <a class="cta-btn" href="mailto:kennykennya00@gmail.com">
+      <i class="ti ti-mail"></i> Get in touch
+    </a>
+  </section>
+
+  <footer>
+    <span class="footer-copy mono">© 2026 Roman Pruglo</span>
+    <span class="footer-badge mono">Open to relocation · EU</span>
+  </footer>
+
+</body>
+</html>
